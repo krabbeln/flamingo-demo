@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Black Flamingo - Marketplace</title>
+    <link rel="stylesheet" href="css/styles.css?v=2">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <div class="logo-container">
+                <h1 class="logo">BLACK FLAMINGO</h1>
+                <svg class="logo-icon" viewBox="0 0 32 32" fill="none">
+                    <!-- Flamingo in side profile -->
+                    <!-- Body -->
+                    <ellipse cx="20" cy="18" rx="5" ry="6" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+                    <!-- S-curved neck going up from body -->
+                    <path d="M 15 16 Q 12 14, 12 10 T 14 6" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+                    <!-- Head -->
+                    <circle cx="14" cy="6" r="2" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+                    <!-- Beak pointing down -->
+                    <path d="M 14 7 L 12 10" stroke="#FFFFFF" stroke-width="1.5" fill="none"/>
+                    <!-- Pink eye -->
+                    <circle cx="14.5" cy="5.5" r="0.8" stroke="#FF1493" fill="#FF1493"/>
+                    <!-- Long legs -->
+                    <line x1="18" y1="24" x2="18" y2="30" stroke="#FFFFFF" stroke-width="1.2"/>
+                    <line x1="22" y1="24" x2="22" y2="29" stroke="#FFFFFF" stroke-width="1.2"/>
+                    <!-- Knee joints (small bends) -->
+                    <line x1="18" y1="27" x2="17" y2="28" stroke="#FFFFFF" stroke-width="1.2"/>
+                </svg>
+            </div>
+            <div class="mode-toggle">
+
+                <span class="mode-label mode-label--buy active">I need</span>
+                <button class="toggle-switch" id="modeToggle" aria-label="Toggle between buying and selling mode">
+                    <span class="toggle-knob"></span>
+                </button>
+                <span class="mode-label mode-label--sell">I provide</span>
+            </div>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="hero">
+            <h2 class="hero-title" id="heroTitle">FIND WHAT YOU NEED</h2>
+
+            <a href="add-item.html" class="add-item-button" id="addItemButton">
+                <svg class="add-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                    <path d="M12 5v14M5 12h14"></path>
+                </svg>
+                <span>ADD NEW ITEM</span>
+            </a>
+
+            <div class="search-container">
+                <input
+                    type="text"
+                    class="search-input"
+                    id="searchInput"
+                    placeholder="Flamingos..."
+                    aria-label="Search products"
+                >
+                <button class="search-button" id="searchButton" aria-label="Search">
+                    <svg class="search-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3">
+                        <circle cx="11" cy="11" r="8"></circle>
+                        <path d="m21 21-4.35-4.35"></path>
+                    </svg>
+                </button>
+            </div>
+        </section>
+
+        <section class="categories">
+            <h3 class="categories-title">TOP CATEGORIES</h3>
+            <div class="categories-grid">
+                <article class="category-card" data-category="electronics">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="2" y="3" width="20" height="14"></rect>
+                            <path d="M8 21h8M12 17v4"></path>
+                        </svg>
+                    </div>
+                    <h4 class="category-name">ELECTRONICS</h4>
+                </article>
+
+                <article class="category-card" data-category="fashion">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 2L3 8v12a2 2 0 002 2h14a2 2 0 002-2V8l-3-6H6zM3 8h18M16 12a4 4 0 01-8 0"></path>
+                        </svg>
+                    </div>
+                    <h4 class="category-name">FASHION</h4>
+                </article>
+
+                <article class="category-card" data-category="locations">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"></path>
+                            <polyline points="9,22 9,12 15,12 15,22"></polyline>
+                        </svg>
+                    </div>
+                    <h4 class="category-name">FURNITURE</h4>
+                </article>
+
+                <article class="category-card" data-category="furniture">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M12 2a15.3 15.3 0 014 10 15.3 15.3 0 01-4 10 15.3 15.3 0 01-4-10 15.3 15.3 0 014-10z"></path>
+                            <path d="M2 12h20"></path>
+                        </svg>
+                    </div>
+                    <h4 class="category-name">Locations</h4>
+                </article>
+
+                <article class="category-card" data-category="vehicles">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 17a2 2 0 104 0 2 2 0 10-4 0M15 17a2 2 0 104 0 2 2 0 10-4 0"></path>
+                            <path d="M5 17H3v-6l2-5h9l4 5h3v6h-2M5 17h10"></path>
+                        </svg>
+                    </div>
+                    <h4 class="category-name">VEHICLES</h4>
+                </article>
+
+                <article class="category-card" data-category="collectibles">
+                    <div class="category-icon">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"></path>
+                        </svg>
+                    </div>
+                    <h4 class="category-name">COLLECTIBLES</h4>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; 2026 BLACK FLAMINGO</p>
+    </footer>
+
+    <script src="js/app.js"></script>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Item - Black Flamingo</title>
+    <link rel="stylesheet" href="css/styles.css?v=3">
+    <link rel="stylesheet" href="css/form.css?v=2">
+</head>
+<body>
+    <header class="header">
+        <div class="header-top">
+            <h1 class="logo">BLACK FLAMINGO</h1>
+            <a href="index.html" class="back-link">Home</a>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="form-section">
+            <!--<h2 class="form-title">LIST YOUR ITEM FOR RENT</h2>-->
+
+            <!-- Progress Indicator -->
+            <div class="wizard-progress">
+                <div class="progress-step active" data-step="1">
+                    <span class="step-number">1</span>
+                    <span class="step-label">PHOTOS</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="2">
+                    <span class="step-number">2</span>
+                    <span class="step-label">INFO</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="3">
+                    <span class="step-number">3</span>
+                    <span class="step-label">PRICING</span>
+                </div>
+                <div class="progress-line"></div>
+                <div class="progress-step" data-step="4">
+                    <span class="step-number">4</span>
+                    <span class="step-label">REVIEW</span>
+                </div>
+            </div>
+
+            <!-- Form Wizard Container -->
+            <form class="add-item-form wizard-form" id="addItemForm">
+                <div class="wizard-steps-container">
+
+                    <!-- Step 1: Photos -->
+                    <div class="wizard-step active" data-step="1">
+                        <div class="step-card">
+                            <h3 class="step-title">ADD PHOTOS</h3>
+                            <p class="step-description">Add up to 8 images.</p>
+
+                            <div class="upload-zone" id="uploadZone">
+                                <div class="upload-icon">
+                                    <svg viewBox="0 0 64 64" fill="none" stroke="currentColor" stroke-width="2">
+                                        <rect x="8" y="12" width="48" height="40" rx="2"/>
+                                        <circle cx="24" cy="28" r="6"/>
+                                        <path d="M8 44 L24 32 L36 44 L48 28 L56 40"/>
+                                    </svg>
+                                </div>
+                                <p class="upload-text">DRAG PHOTOS HERE</p>
+                                <p class="upload-subtext">or click to browse</p>
+                                <input type="file" id="photos" name="photos" multiple accept="image/*" class="upload-input">
+                            </div>
+
+                            <div class="image-preview-grid" id="imagePreviewGrid"></div>
+
+                            <!--<p class="upload-hint">Tip: Click on an image for main listing photo</p>-->
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Basic Info -->
+                    <div class="wizard-step" data-step="2">
+                        <div class="step-card">
+                            <h3 class="step-title">ITEM DETAILS</h3>
+
+                            <div class="form-group">
+                                <label for="itemName">Item Name</label>
+                                <input type="text" id="itemName" name="itemName" required
+                                       placeholder="e.g., Sony Alpha 7iii">
+                            </div>
+
+                            <div class="form-group">
+                                <label>Category</label>
+                                <div class="category-select-grid" id="categoryGrid">
+                                    <div class="category-option" data-value="electronics">
+                                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="4" y="6" width="24" height="16" rx="2"/>
+                                            <line x1="4" y1="26" x2="28" y2="26"/>
+                                            <line x1="16" y1="22" x2="16" y2="26"/>
+                                        </svg>
+                                        <span>ELECTRONICS</span>
+                                    </div>
+                                    <div class="category-option" data-value="fashion">
+                                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M8 6 L16 10 L24 6 L26 16 L24 28 L8 28 L6 16 Z"/>
+                                            <circle cx="16" cy="12" r="2"/>
+                                        </svg>
+                                        <span>FASHION</span>
+                                    </div>
+                                    <div class="category-option" data-value="furniture">
+                                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                            <rect x="4" y="12" width="24" height="10" rx="2"/>
+                                            <line x1="8" y1="22" x2="8" y2="28"/>
+                                            <line x1="24" y1="22" x2="24" y2="28"/>
+                                            <path d="M6 12 L6 8 Q16 4 26 8 L26 12"/>
+                                        </svg>
+                                        <span>FURNITURE</span>
+                                    </div>
+                                    <div class="category-option" data-value="locations">
+                                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M16 4 C10 4 6 9 6 14 C6 22 16 28 16 28 C16 28 26 22 26 14 C26 9 22 4 16 4 Z"/>
+                                            <circle cx="16" cy="14" r="4"/>
+                                        </svg>
+                                        <span>LOCATIONS</span>
+                                    </div>
+                                    <div class="category-option" data-value="vehicles">
+                                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                            <path d="M4 18 L6 12 L10 10 L22 10 L26 12 L28 18 L28 22 L4 22 Z"/>
+                                            <circle cx="9" cy="22" r="3"/>
+                                            <circle cx="23" cy="22" r="3"/>
+                                        </svg>
+                                        <span>VEHICLES</span>
+                                    </div>
+                                    <div class="category-option" data-value="collectibles">
+                                        <svg viewBox="0 0 32 32" fill="none" stroke="currentColor" stroke-width="2">
+                                            <polygon points="16,4 20,12 28,13 22,19 24,28 16,24 8,28 10,19 4,13 12,12"/>
+                                        </svg>
+                                        <span>COLLECTIBLES</span>
+                                    </div>
+                                </div>
+                                <input type="hidden" id="category" name="category" required>
+                            </div>
+
+                            <div class="form-group">
+                                <label>Condition</label>
+                                <div class="condition-options">
+                                    <button type="button" class="condition-btn" data-value="excellent">Excellent</button>
+                                    <button type="button" class="condition-btn" data-value="good">Good</button>
+                                    <button type="button" class="condition-btn" data-value="fair">Fair</button>
+                                </div>
+                                <input type="hidden" id="condition" name="condition" required>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Pricing -->
+                    <div class="wizard-step" data-step="3">
+                        <div class="step-card">
+                            <h3 class="step-title">SET YOUR PRICE</h3>
+
+                            <div class="form-group">
+                                <label for="priceDaily">Price per Day</label>
+                                <div class="input-with-prefix">
+                                    <span class="input-prefix">€</span>
+                                    <input type="number" id="priceDaily" name="priceDaily" min="1" step="1" required placeholder="0">
+                                </div>
+                            </div>
+
+                            <div class="form-row two-column">
+                                <div class="form-group">
+                                    <label for="priceWeekly">Weekly Rate</label>
+                                    <div class="input-with-prefix">
+                                        <span class="input-prefix">€</span>
+                                        <input type="number" id="priceWeekly" name="priceWeekly" min="1" step="1" placeholder="Optional">
+                                    </div>
+                                    <span class="field-hint suggested-rate" id="suggestedWeekly"></span>
+                                </div>
+                                <div class="form-group">
+                                    <label for="priceMonthly">Monthly Rate</label>
+                                    <div class="input-with-prefix">
+                                        <span class="input-prefix">€</span>
+                                        <input type="number" id="priceMonthly" name="priceMonthly" min="1" step="1" placeholder="Optional">
+                                    </div>
+                                    <span class="field-hint suggested-rate" id="suggestedMonthly"></span>
+                                </div>
+                            </div>
+
+                            <div class="form-row two-column">
+                                <div class="form-group">
+                                    <label for="minRental">Minimum Rental</label>
+                                    <select id="minRental" name="minRental">
+                                        <option value="1">1 day</option>
+                                        <option value="2">2 days</option>
+                                        <option value="3">3 days</option>
+                                        <option value="7">1 week</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="deposit">Security Deposit</label>
+                                    <div class="input-with-prefix">
+                                        <span class="input-prefix">€</span>
+                                        <input type="number" id="deposit" name="deposit" min="0" step="1" placeholder="Optional">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Description & Review -->
+                    <div class="wizard-step" data-step="4">
+                        <div class="step-card">
+                            <h3 class="step-title">DESCRIBE YOUR ITEM</h3>
+
+                            <div class="form-group">
+                                <label for="description">Description</label>
+                                <textarea id="description" name="description" rows="5" required
+                                          placeholder="Describe your item..."></textarea>
+                                <span class="char-count"><span id="charCount">0</span>/500</span>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="location">Pickup Location</label>
+                                <input type="text" id="location" name="location"
+                                       placeholder="e.g., Wien, 1050">
+                            </div>
+                        </div>
+
+                        <!-- Listing Preview -->
+                        <div class="listing-preview" id="listingPreview">
+                            <h3 class="preview-title">LISTING PREVIEW</h3>
+                            <div class="preview-card">
+                                <div class="preview-image" id="previewImage">
+                                    <span class="preview-placeholder">No image</span>
+                                </div>
+                                <div class="preview-info">
+                                    <h4 class="preview-name" id="previewName">Your Item Name</h4>
+                                    <p class="preview-price" id="previewPrice">€0/day</p>
+                                    <p class="preview-category" id="previewCategory">Category</p>
+                                    <p class="preview-condition" id="previewCondition"></p>
+                                </div>
+                            </div>
+                            <button type="button" class="edit-listing-btn" id="editListingBtn">
+                                ← EDIT DETAILS
+                            </button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Submit Button -->
+                <div class="wizard-navigation">
+                    <button type="submit" class="nav-btn nav-btn-submit" id="submitBtn" style="display: none;">
+                        LIST MY ITEM
+                    </button>
+                </div>
+            </form>
+        </section>
+    </main>
+
+    <!-- Success Modal -->
+    <div class="success-overlay" id="successOverlay" style="display: none;">
+        <div class="success-modal">
+            <div class="success-icon">✓</div>
+            <h2>LISTING SUBMITTED!</h2>
+            <p>Your item is now live on Black Flamingo.</p>
+            <a href="index.html" class="success-btn">BACK TO HOME</a>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <p>&copy; 2026 BLACK FLAMINGO</p>
+    </footer>
+
+    <script src="js/form.js?v=2"></script>
+</body>
+</html>
